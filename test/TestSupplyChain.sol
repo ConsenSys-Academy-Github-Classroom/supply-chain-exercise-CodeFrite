@@ -9,16 +9,11 @@ contract TestSupplyChain {
     // Test for failing conditions in this contracts:
     // https://truffleframework.com/tutorials/testing-for-throws-in-solidity-tests
 
-    // For reference, I used this link : https://www.trufflesuite.com/docs/truffle/testing/writing-tests-in-solidity 
-
     // buyItem
     function testBuyItem() public {
         SupplyChain sc = SupplyChain(DeployedAddresses.SupplyChain());
         // test for failure if user does not send enough funds
         // test for purchasing an item that is not for Sale
-        bool r;
-        (r, ) = address(sc).call(abi.encodeWithSignature("buyItem(uint)",100));
-        Assert.isFalse(r, "If this is true, something is broken!");
     }  
 
     // shipItem
